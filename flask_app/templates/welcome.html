@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Picture This...</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container p-2 my-2 text-white">
+        <div class="content d-flex align-items-center border border-dark justify-content-evenly m-auto">
+            <div class="d-flex align-items-center">
+                <img src="/static/images/aperture-512-125644525.png" alt="" class="nav_img">
+                <h1 class="text-white mt-3 mx-3 d-flex ">Welcome to Picture This!<span><h4 class="text-white-50 m-3">  Share a moment...</h4></span></h1>
+            </div>
+            <div class="d-flex justify-content-evenly align-items-center ">
+                <a class=" text-primary btn" href="/login"><h4>Login</h4></a>
+                <a class=" text-primary btn" href="/register"><h4>Register</h4></a>
+            </div>
+        </div>
+        <div class="bg-dark border border-dark justify-content-evenly mt-3">
+            <div class="main m-auto mt-2">
+                <div class="mySlides">
+                    <div class="numbertext">1 / 6</div>
+                    <img src="/static/images/pexels-andy-vu-3244513.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">2 / 6</div>
+                    <img src="/static/images/pexels-frank-cone-2258536.jpg" style="width:100%">
+                </div>              
+                <div class="mySlides">
+                    <div class="numbertext">6 / 6</div>
+                    <img src="/static/images/pexels-eberhard-grossgasteiger-572897.jpg" style="width:100%">
+                </div>              
+                <div class="mySlides">
+                    <div class="numbertext">3 / 6</div>
+                    <img src="/static/images/pexels-frans-van-heerden-624015.jpg" style="width:100%">
+                </div>              
+                <div class="mySlides">
+                    <div class="numbertext">4 / 6</div>
+                    <img src="/static/images/pexels-luis-del-rÃ­o-15286.jpg" style="width:100%">
+                </div>
+                <div class="mySlides">
+                    <div class="numbertext">5 / 6</div>
+                    <img src="/static/images/pexels-brady-knoll-5409751.jpg" style="width:100%">
+                </div>              
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>             
+                <div class="row">
+                    <div class="column">
+                    <img class="demo cursor" src="/static/images/pexels-andy-vu-3244513.jpg" style="width:100%" onclick="currentSlide(1)" alt="">
+                </div>
+                <div class="column"> 
+                    <img class="demo cursor" src="/static/images/pexels-frank-cone-2258536.jpg" style="width:100%" onclick="currentSlide(2)" alt="">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="/static/images/pexels-frans-van-heerden-624015.jpg" style="width:100%" onclick="currentSlide(3)" alt="">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="/static/images/pexels-luis-del-rÃ­o-15286.jpg" style="width:100%" onclick="currentSlide(4)" alt="">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="/static/images/pexels-brady-knoll-5409751.jpg" style="width:100%" onclick="currentSlide(5)" alt="">
+                </div> 
+                <div class="column">
+                    <img class="demo cursor" src="/static/images/pexels-eberhard-grossgasteiger-572897.jpg" style="width:100%" onclick="currentSlide(6)" alt="">
+                </div>
+                </div>
+            </div>
+        </div>
+        {% with messages = get_flashed_messages() %} 
+        {% if messages %} 
+            {% for message in messages %} 
+                <p class="text-danger">{{message}}</p> 
+            {% endfor %}
+        {% endif %}
+        {% endwith %}
+        </div>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
